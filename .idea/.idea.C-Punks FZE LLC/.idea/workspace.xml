@@ -34,6 +34,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scenes/Main/UI/Screens/MenuScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scenes/Main/UI/Screens/PlayScreen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scenes/Main/UI/UIScreenNavigator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Services/AdMob/AdMobService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Services/Facebook/FacebookService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Services/Firebase/FirebaseService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Services/ServiceInstaller.cs" root0="FORCE_HIGHLIGHTING" />
