@@ -4,6 +4,7 @@ using Facebook.Unity;
 using Gameplay.ScoreSystem;
 using Scenes.Main.UI;
 using Scenes.Main.UI.Screens;
+using Services.AdMob;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,15 +14,17 @@ namespace Scenes.Main.StateMachine.States
     {
         private readonly UIScreenNavigator _uiScreenNavigator;
         private readonly ScoreCounter _scoreCounter;
+        private readonly AdMobService _adMobService;
 
         private DefeatScreen _defeatScreen;
 
         public DefeatState(MainSceneStateMachine stateMachine, UIScreenNavigator uiScreenNavigator,
-            ScoreCounter scoreCounter)
+            ScoreCounter scoreCounter, AdMobService adMobService)
             : base(stateMachine)
         {
             _uiScreenNavigator = uiScreenNavigator;
             _scoreCounter = scoreCounter;
+            _adMobService = adMobService;
         }
 
         public override void Enter()
@@ -29,6 +32,9 @@ namespace Scenes.Main.StateMachine.States
             base.Enter();
 
             Time.timeScale = 0f;
+
+            SendEvents();
+            _adMobService.ShowInterstitial();
             _defeatScreen = _uiScreenNavigator.Show<DefeatScreen>();
 
             if (_defeatScreen != null)
@@ -41,6 +47,8 @@ namespace Scenes.Main.StateMachine.States
         {
             base.Exit();
 
+            Time.timeScale = 1f;
+            
             if (_defeatScreen != null)
             {
                 _defeatScreen.ContinueButtonClicked -= OnContinueButtonClicked;
@@ -49,6 +57,7 @@ namespace Scenes.Main.StateMachine.States
 
         private void OnContinueButtonClicked()
         {
+            Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
