@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e9f9273f-6d91-4e20-a5c6-56700374a8e5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,6 +14,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scenes/Main/MainSceneEntryPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scenes/Main/StateMachine/MainSceneStateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scenes/Main/StateMachine/MainSceneStateMachineInstaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Scenes/Main/StateMachine/States/IntroState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Services/Firebase/FirebaseService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Game/Scripts/Services/ServiceInstaller.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
