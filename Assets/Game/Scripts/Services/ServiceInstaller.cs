@@ -1,5 +1,5 @@
+using Services.Facebook;
 using Services.Firebase;
-using UnityEngine;
 using Zenject;
 
 namespace Services
@@ -9,6 +9,9 @@ namespace Services
         public override void InstallBindings()
         {
             Container.BindInterfacesAndSelfTo<FirebaseService>()
+                .AsSingle();
+
+            Container.BindInterfacesAndSelfTo<FacebookService>()
                 .AsSingle();
         }
     }
