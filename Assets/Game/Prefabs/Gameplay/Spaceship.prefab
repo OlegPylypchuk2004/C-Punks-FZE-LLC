@@ -124,9 +124,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.SpaceshipSystem.SpaceshipMovement
   points:
-  - {x: 0, y: 0}
   - {x: -1.25, y: 0}
+  - {x: 0, y: 0}
   - {x: 1.25, y: 0}
+  initialPointIndex: 1
 --- !u!1 &9156330707618108107
 GameObject:
   m_ObjectHideFlags: 0
