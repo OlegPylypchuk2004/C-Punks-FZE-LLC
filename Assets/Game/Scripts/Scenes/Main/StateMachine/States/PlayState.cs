@@ -1,4 +1,5 @@
 using Gameplay.AsteroidSystem;
+using Gameplay.ScoreSystem;
 using Gameplay.SpaceshipSystem;
 using InputSystem;
 using Scenes.Main.UI;
@@ -12,17 +13,19 @@ namespace Scenes.Main.StateMachine.States
         private readonly Spaceship _spaceship;
         private readonly AsteroidSpawner _asteroidSpawner;
         private readonly IInputHandler _inputHandler;
+        private readonly ScoreCounter _scoreCounter;
 
         private PlayScreen _playScreen;
 
         public PlayState(MainSceneStateMachine stateMachine, UIScreenNavigator uiScreenNavigator, Spaceship spaceship,
-            AsteroidSpawner asteroidSpawner, IInputHandler inputHandler)
+            AsteroidSpawner asteroidSpawner, IInputHandler inputHandler, ScoreCounter scoreCounter)
             : base(stateMachine)
         {
             _uiScreenNavigator = uiScreenNavigator;
             _spaceship = spaceship;
             _asteroidSpawner = asteroidSpawner;
             _inputHandler = inputHandler;
+            _scoreCounter = scoreCounter;
         }
 
         public override void Enter()
@@ -33,6 +36,7 @@ namespace Scenes.Main.StateMachine.States
             _spaceship.Destroyed += OnSpaceshipDestroyed;
             _asteroidSpawner.IsActive = true;
             _inputHandler.IsActive = true;
+            _scoreCounter.IsActive = true;
         }
 
         public override void Exit()
@@ -42,6 +46,7 @@ namespace Scenes.Main.StateMachine.States
             _spaceship.Destroyed -= OnSpaceshipDestroyed;
             _asteroidSpawner.IsActive = false;
             _inputHandler.IsActive = false;
+            _scoreCounter.IsActive = false;
         }
 
         private void OnSpaceshipDestroyed()
