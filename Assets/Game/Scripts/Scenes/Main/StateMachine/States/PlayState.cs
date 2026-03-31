@@ -1,3 +1,4 @@
+using Gameplay.AsteroidSystem;
 using Gameplay.SpaceshipSystem;
 using InputSystem;
 using Scenes.Main.UI;
@@ -9,16 +10,18 @@ namespace Scenes.Main.StateMachine.States
     {
         private readonly UIScreenNavigator _uiScreenNavigator;
         private readonly Spaceship _spaceship;
+        private readonly AsteroidSpawner _asteroidSpawner;
         private readonly IInputHandler _inputHandler;
 
         private PlayScreen _playScreen;
 
         public PlayState(MainSceneStateMachine stateMachine, UIScreenNavigator uiScreenNavigator, Spaceship spaceship,
-            IInputHandler inputHandler)
+            AsteroidSpawner asteroidSpawner, IInputHandler inputHandler)
             : base(stateMachine)
         {
             _uiScreenNavigator = uiScreenNavigator;
             _spaceship = spaceship;
+            _asteroidSpawner = asteroidSpawner;
             _inputHandler = inputHandler;
         }
 
@@ -27,6 +30,7 @@ namespace Scenes.Main.StateMachine.States
             base.Enter();
 
             _playScreen = _uiScreenNavigator.Show<PlayScreen>();
+            _asteroidSpawner.IsActive = true;
             _inputHandler.IsActive = true;
         }
 
@@ -34,6 +38,7 @@ namespace Scenes.Main.StateMachine.States
         {
             base.Exit();
 
+            _asteroidSpawner.IsActive = false;
             _inputHandler.IsActive = false;
         }
     }
