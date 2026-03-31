@@ -362,6 +362,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3267720e82aa41c1a05ab29824902b4, type: 3}
+--- !u!1 &1114458597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114458599}
+  - component: {fileID: 1114458598}
+  m_Layer: 0
+  m_Name: AsteroidInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1114458598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114458597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed0ec689a19549199a4fd0ace6bc11ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.AsteroidSystem.AsteroidInstaller
+  asteroidPrefab: {fileID: 3629964748253092725, guid: ebafb06b354da4e239b58bec167de6c0, type: 3}
+  spawnPoints:
+  - {x: -1.25, y: 5}
+  - {x: 0, y: 5}
+  - {x: 1.25, y: 5}
+  spawnDelay: 1
+--- !u!4 &1114458599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114458597}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1130455802}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1130455800
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +446,7 @@ MonoBehaviour:
   - {fileID: 1577938508}
   - {fileID: 2020541665}
   - {fileID: 523918814}
+  - {fileID: 1114458598}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -429,6 +480,7 @@ Transform:
   - {fileID: 1577938509}
   - {fileID: 2020541664}
   - {fileID: 523918815}
+  - {fileID: 1114458599}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1287352093
