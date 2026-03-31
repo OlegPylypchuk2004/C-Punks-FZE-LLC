@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Gameplay.AsteroidSystem
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Asteroid : MonoBehaviour
+    public class Asteroid : MonoBehaviour, IObstacle
     {
         [SerializeField, Min(0)] private float speed;
 

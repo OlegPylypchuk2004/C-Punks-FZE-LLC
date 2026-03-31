@@ -30,6 +30,7 @@ namespace Scenes.Main.StateMachine.States
             base.Enter();
 
             _playScreen = _uiScreenNavigator.Show<PlayScreen>();
+            _spaceship.Destroyed += OnSpaceshipDestroyed;
             _asteroidSpawner.IsActive = true;
             _inputHandler.IsActive = true;
         }
@@ -38,8 +39,14 @@ namespace Scenes.Main.StateMachine.States
         {
             base.Exit();
 
+            _spaceship.Destroyed -= OnSpaceshipDestroyed;
             _asteroidSpawner.IsActive = false;
             _inputHandler.IsActive = false;
+        }
+
+        private void OnSpaceshipDestroyed()
+        {
+            _stateMachine.ChangeState<DefeatState>();
         }
     }
 }

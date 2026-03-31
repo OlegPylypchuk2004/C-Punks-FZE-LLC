@@ -1,5 +1,7 @@
 using Scenes.Main.UI;
 using Scenes.Main.UI.Screens;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Scenes.Main.StateMachine.States
 {
@@ -18,7 +20,28 @@ namespace Scenes.Main.StateMachine.States
         {
             base.Enter();
 
+            Time.timeScale = 0f;
             _defeatScreen = _uiScreenNavigator.Show<DefeatScreen>();
+
+            if (_defeatScreen != null)
+            {
+                _defeatScreen.ContinueButtonClicked += OnContinueButtonClicked;
+            }
+        }
+
+        public override void Exit()
+        {
+            base.Exit();
+            
+            if (_defeatScreen != null)
+            {
+                _defeatScreen.ContinueButtonClicked -= OnContinueButtonClicked;
+            }
+        }
+
+        private void OnContinueButtonClicked()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
