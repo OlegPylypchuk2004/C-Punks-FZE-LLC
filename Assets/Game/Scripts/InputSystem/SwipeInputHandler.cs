@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace InputSystem
 {
-    public class SwipeInputHandler : IDirectionInputHandler, ITickable
+    public class SwipeInputHandler : IInputHandler, ITickable
     {
-        public event Action<InputDirection> DirectionPerformed;
+        public event Action<InputDirection> Performed;
 
         public bool IsActive { get; set; }
 
@@ -31,22 +32,23 @@ namespace InputSystem
 
         private void HandleTouch()
         {
-            if (Input.touchCount == 0)
+            var touchscreen = Touchscreen.current;
+            if (touchscreen == null)
             {
                 return;
             }
 
-            Touch touch = Input.GetTouch(0);
+            var touch = touchscreen.primaryTouch;
 
-            if (touch.phase == TouchPhase.Began)
+            if (touch.press.wasPressedThisFrame)
             {
-                _touchStartPosition = touch.position;
+                _touchStartPosition = touch.position.ReadValue();
                 _isSwiping = true;
             }
 
-            if ((touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled) && _isSwiping)
+            if (touch.press.wasReleasedThisFrame && _isSwiping)
             {
-                DetectSwipe(touch.position - _touchStartPosition);
+                DetectSwipe(touch.position.ReadValue() - _touchStartPosition);
                 _isSwiping = false;
             }
         }
@@ -60,11 +62,11 @@ namespace InputSystem
 
             if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
             {
-                DirectionPerformed?.Invoke(delta.x > 0 ? InputDirection.Right : InputDirection.Left);
+                Performed?.Invoke(delta.x > 0 ? InputDirection.Right : InputDirection.Left);
             }
             else
             {
-                DirectionPerformed?.Invoke(delta.y > 0 ? InputDirection.Up : InputDirection.Down);
+                Performed?.Invoke(delta.y > 0 ? InputDirection.Up : InputDirection.Down);
             }
         }
     }

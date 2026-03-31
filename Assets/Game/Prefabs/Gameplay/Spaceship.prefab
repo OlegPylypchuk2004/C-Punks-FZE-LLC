@@ -123,6 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a059f3b0cb854e3194f7c066a6002a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.SpaceshipSystem.SpaceshipMovement
+  points:
+  - {x: 0, y: 0}
+  - {x: -1.25, y: 0}
+  - {x: 1.25, y: 0}
 --- !u!1 &9156330707618108107
 GameObject:
   m_ObjectHideFlags: 0
