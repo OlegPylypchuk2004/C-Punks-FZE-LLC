@@ -1,4 +1,3 @@
-using AdjustSdk;
 using Gameplay.AsteroidSystem;
 using Gameplay.ScoreSystem;
 using Gameplay.SpaceshipSystem;
@@ -52,12 +51,6 @@ namespace Scenes.Main.StateMachine.States
 
         private void OnSpaceshipDestroyed()
         {
-            Firebase.Analytics.FirebaseAnalytics.LogEvent("enemy_destroyed", "score", _scoreCounter.CurrentScore);
-
-            AdjustEvent adjustEvent = new AdjustEvent("ВАШ_ТОКЕН_ПОДІЇ");
-            adjustEvent.AddCallbackParameter("score", _scoreCounter.CurrentScore.ToString());
-            Adjust.TrackEvent(adjustEvent);
-
             _stateMachine.ChangeState<DefeatState>();
         }
     }
