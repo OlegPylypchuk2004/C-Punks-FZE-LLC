@@ -17,6 +17,15 @@ namespace Scenes.Main.StateMachine
 
             Container.Bind<IntroState>()
                 .AsSingle();
+
+            Container.Bind<MenuState>()
+                .AsSingle();
+
+            Container.Bind<PlayState>()
+                .AsSingle();
+
+            Container.Bind<DefeatState>()
+                .AsSingle();
         }
     }
 }

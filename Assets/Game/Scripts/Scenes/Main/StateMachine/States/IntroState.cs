@@ -33,8 +33,10 @@ namespace Scenes.Main.StateMachine.States
             }
             catch (Exception exception)
             {
-                Debug.LogError(exception);
+                Debug.LogError($"{GetType().Name}. {exception}");
             }
+
+            _stateMachine.ChangeState<MenuState>();
         }
 
         public override void Exit()
