@@ -5,7 +5,6 @@ using Gameplay.ScoreSystem;
 using Scenes.Main.UI;
 using Scenes.Main.UI.Screens;
 using Services.AdMob;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Scenes.Main.StateMachine.States
@@ -31,8 +30,6 @@ namespace Scenes.Main.StateMachine.States
         {
             base.Enter();
 
-            Time.timeScale = 0f;
-
             SendEvents();
             _adMobService.ShowInterstitial();
             _defeatScreen = _uiScreenNavigator.Show<DefeatScreen>();
@@ -47,8 +44,6 @@ namespace Scenes.Main.StateMachine.States
         {
             base.Exit();
 
-            Time.timeScale = 1f;
-            
             if (_defeatScreen != null)
             {
                 _defeatScreen.ContinueButtonClicked -= OnContinueButtonClicked;
@@ -57,7 +52,6 @@ namespace Scenes.Main.StateMachine.States
 
         private void OnContinueButtonClicked()
         {
-            Time.timeScale = 1f;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
