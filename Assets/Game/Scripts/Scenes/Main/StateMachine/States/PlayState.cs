@@ -51,6 +51,8 @@ namespace Scenes.Main.StateMachine.States
 
         private void OnSpaceshipDestroyed()
         {
+            Firebase.Analytics.FirebaseAnalytics.LogEvent("enemy_destroyed", "score", _scoreCounter.CurrentScore);
+
             _stateMachine.ChangeState<DefeatState>();
         }
     }
