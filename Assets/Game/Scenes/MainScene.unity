@@ -596,6 +596,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scenes.Main.UI.ScreenInstaller
   menuScreenPrefab: {fileID: 2961965864525735543, guid: 94551fa791b244936bec58aac4ced48f, type: 3}
+  playScreenPrefab: {fileID: 2651021651424933925, guid: 45643fed166c04285b6384b15c11fc90, type: 3}
+  defeatScreenPrefab: {fileID: 4340470353338823843, guid: 107f03a9ef811424b80ae94f8d7da079, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
