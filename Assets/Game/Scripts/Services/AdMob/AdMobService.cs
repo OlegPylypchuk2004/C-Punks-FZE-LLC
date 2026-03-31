@@ -20,6 +20,7 @@ namespace Services.AdMob
         {
             try
             {
+                MobileAds.RaiseAdEventsOnUnityMainThread = true;
                 var initializationTcs = new UniTaskCompletionSource();
 
                 MobileAds.Initialize(initStatus =>
