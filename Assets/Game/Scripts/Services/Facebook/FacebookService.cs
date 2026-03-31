@@ -1,7 +1,7 @@
 using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
-using Facebook.Unity;
+//using Facebook.Unity;
 using UnityEngine;
 
 namespace Services.Facebook
@@ -12,6 +12,7 @@ namespace Services.Facebook
         {
             try
             {
+                /*
                 if (FB.IsInitialized)
                 {
                     FB.ActivateApp();
@@ -38,7 +39,7 @@ namespace Services.Facebook
                     });
 
                 await utcs.Task.AttachExternalCancellation(cancellationToken);
-
+*/
                 Debug.Log("Facebook SDK initialized successfully");
             }
             catch (OperationCanceledException)

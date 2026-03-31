@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using AdjustSdk;
-using Facebook.Unity;
+//using Facebook.Unity;
 using Gameplay.ScoreSystem;
 using Scenes.Main.UI;
 using Scenes.Main.UI.Screens;
@@ -74,7 +74,7 @@ namespace Scenes.Main.StateMachine.States
             //Meta
             var parameters = new Dictionary<string, object>();
             parameters["score"] = _scoreCounter.CurrentScore;
-            FB.LogAppEvent("game_over", parameters: parameters);
+            //FB.LogAppEvent("game_over", parameters: parameters);
         }
     }
 }
