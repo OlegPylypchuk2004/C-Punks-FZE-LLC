@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "532441564714",
+    "project_id": "c-punks-fze-llc",
+    "storage_bucket": "c-punks-fze-llc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532441564714:android:0b67e0aee260d07e7de553",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.CPunksFZELLC"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCCuJsmcIJRactMEju83sQEpibWaPYLA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
